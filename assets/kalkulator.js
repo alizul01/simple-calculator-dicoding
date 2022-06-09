@@ -91,5 +91,16 @@ function performCalculation() {
         result = parseInt(calculator.firstNumber) - parseInt(calculator.displayNumber);
     }
 
+    const history = {
+        firstNumber: calculator.firstNumber,
+        operator: calculator.operator,
+        secondNumber: calculator.displayNumber,
+        result: result
+    }
+
+    putHistory(history);
+    calculator.displayNumber = result;
+    renderHistory();
+
     calculator.displayNumber = result.toString();
 }
